@@ -9,6 +9,10 @@ stages{
 
 
    stage ('code build')
-     { steps { sh 'ant init'   }}
+     { steps { 
+
+       withAnt(installation: 'localant', jdk: 'LocalJDK') 
+        {  sh 'ant init'  } 
+    }}
 
 }}
